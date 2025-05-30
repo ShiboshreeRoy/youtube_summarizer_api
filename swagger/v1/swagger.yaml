@@ -1,0 +1,30 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/summarize":
+    post:
+      summary: Summarize YouTube video
+      tags:
+      - Summarizer
+      parameters: []
+      responses:
+        '200':
+          description: summary returned
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                youtube_url:
+                  type: string
+              required:
+              - youtube_url
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
